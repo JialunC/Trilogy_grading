@@ -1,3 +1,14 @@
 ---
   - name: update apt
     command: apt-get update
+
+  - name: install curl
+    apt: name=curl state=installed update_cache=True
+
+  - name: nodejs source
+    shell: curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+  - name: install nodejs  
+    apt: name=nodejs state=installed update_cache=True
+
+  
