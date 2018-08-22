@@ -1,0 +1,11 @@
+[vagrant_machine]
+192.168.33.10
+
+[vagrant:children]
+vagrant_machine
+
+[vagrant:vars]
+mysql_db_name="grading"
+mysql_db_username="grader"
+mysql_db_password=QN)l?daLD)V[qaq@
+mysql_root_password=6AzL?rkU@yv^5&#*

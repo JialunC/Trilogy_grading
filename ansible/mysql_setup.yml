@@ -1,0 +1,21 @@
+---
+  - name: install mysql
+    apt: pkg=mysql-server state=installed update_cache=True
+
+  - name: install mysql-python bindings
+    apt: name=python-mysqldb state=installed update_cache=True
+
+  - name: Start the MySQL service
+    action: service name=mysql state=started
+
+  - name: Reset root PW
+    command: mysql -u root --execute="UPDATE mysql.user SET authentication_string = PASSWORD('{{ mysql_root_password }}') WHERE User = 'root' AND (Host = 'localhost' OR Host = '127.0.0.1');"
+
+  - name: Create a new database called grading
+    mysql_db: name={{mysql_db_name}} state=present
+
+  - name: Drop grader user for mysql
+    mysql_user: login_user=root login_password={{mysql_root_password}} name={{mysql_db_username}} state=absent
+
+  - name: Create grader user for mysql
+    mysql_user: user={{mysql_db_username}} password={{mysql_db_password}} priv=*.*:ALL,GRANT state=present
