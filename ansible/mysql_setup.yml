@@ -1,0 +1,12 @@
+---
+  - name: install mysql
+    apt: pkg=mysql-server state=installed update_cache=True
+
+  - name: install mysql-python bindings
+    apt: name=python-mysqldb state=installed update_cache=True
+
+  - name: Start the MySQL service
+    action: service name=mysql state=started
+  
+  - name: Create grader user for mysql
+    mysql_user: user={{mysql_db_username}} password={{mysql_db_password}} priv=*.*:ALL,GRANT state=present
