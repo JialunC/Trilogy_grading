@@ -3,3 +3,8 @@
 
 [vagrant:children]
 vagrant_machine
+
+[vagrant:vars]
+mysql_db_name="grading"
+mysql_db_username="grader"
+mysql_db_password=073983e50b67
