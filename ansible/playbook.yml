@@ -1,0 +1,16 @@
+---
+- name: setup Trilogy Web Dev Grading Env
+  hosts: vagrant
+  user: vagrant
+  sudo: true
+  gather_facts: False
+
+  pre_tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+
+  tasks:
+    - name: test connection
+      ping:
+
+    - include: package_installations.yml
