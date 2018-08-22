@@ -1,0 +1,5 @@
+[vagrant_machine]
+192.168.33.10
+
+[vagrant:children]
+vagrant_machine
