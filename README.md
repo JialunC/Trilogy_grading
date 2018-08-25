@@ -27,7 +27,7 @@ This vagrant env is for Web Dev TAs at Trilogy to grade their assignments, witho
 ## Grading Week 10 Assignments
 1. Open your terminal `vagrant up`(from the repo directory). 
 2. Open your terminal `vagrant ssh` (from the repo directory) to login to the VM.
-3. Move to your students' projects. Import .SQL files from your students - `mysql -u grader -p database_name < student_file.sql`
+3. Move to your students' projects. Import .SQL files from your students - `sudo mysql -u root < student_file.sql`
 4. Edit mysql.createConnection params in your students' projects, using the DB info above.
 5. After npm installations and then you can start testing your students' projects.
 
