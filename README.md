@@ -31,6 +31,10 @@ This vagrant env is for Web Dev TAs at Trilogy to grade their assignments, witho
 4. Edit mysql.createConnection params in your students' projects, using the DB info above.
 5. After npm installations and then you can start testing your students' projects.
 
+## Project 2
+1. Run `git pull` to update the ansible playbook.
+2. Sequelize and Sequelize-cli will be installed with `vagrant provision`.
+
 ## Debt
 1. MySQL root user is not working. If you need to log into mysql as root, use `sudo mysql -u root`.
 2. And more...
