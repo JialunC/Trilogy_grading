@@ -11,4 +11,8 @@
   - name: install nodejs  
     apt: name=nodejs state=installed update_cache=True
 
-  
+  - name: install sequelize and sequelize cli
+    npm: name={{item}} global=true
+    with_items:
+      - sequelize
+      - sequelize-cli
